@@ -1,26 +1,25 @@
-language: node_js
-sudo: required
-node_js: 
-  - "stable"
-script:
-  - npm run build
-  - make sonarqube
-addons:
-  sonarcloud:
-    organization: "jeroenvo1-github"
-    token:
-      secure: 3f9b3012334cb5248d7fadc8e080a69c4cc29293
-before_deploy:
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - cd operations/scripts; npm install; cd ../../
-  - make build-api
-  - make push-api
-  - cd docs/; npm install; npm run generate-docs; cd ../
-  - make build-docs
-  - make push-docs
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: make deploy
-  on:
-    branch: master
+# language: node_js
+# sudo: required
+# node_js: 
+#   - "stable"
+# script:
+#   - npm run build
+#   - make sonarqube
+# addons:
+#   sonarcloud:
+#     organization: "jeroenvo1-github"
+#     token:
+# before_deploy:
+#   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+#   - cd operations/scripts; npm install; cd ../../
+#   - make build-api
+#   - make push-api
+#   - cd docs/; npm install; npm run generate-docs; cd ../
+#   - make build-docs
+#   - make push-docs
+# deploy:
+#   skip_cleanup: true
+#   provider: script
+#   script: make deploy
+#   on:
+#     branch: master
