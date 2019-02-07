@@ -1,0 +1,12 @@
+{
+    "description": "API docs",
+    "license": "MIT",
+    "repository": {},
+    "scripts": {
+        "generate-docs": "apidoc -i ../src/ -o doc/",
+        "run:docker": "docker run -p 8082:80 -t -i -v $(pwd)/doc:/app parcelspot_api_docs"
+    },
+    "dependencies": {
+        "apidoc": "^0.17.7"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "description": "Deployment script",
+    "license": "MIT",
+    "repository": {},
+    "dependencies": {
+        "shelljs": "^0.7.8",
+        "simple-ssh": "^1.0.0",
+        "yargs": "^8.0.1"
+    }
+}
